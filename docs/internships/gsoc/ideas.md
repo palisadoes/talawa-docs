@@ -139,14 +139,18 @@ Please read the `Research` section of this document for background information
 
 ### Improved File Uploads and Security
 
-1. **Description:** We need a better solution for handling files uploaded from Talawa clients. GraphQL is unsuitable for file access and, storing files in the code tree with only a `.gitignore` file as protection is risky.
-2. **Expected Outcomes:** Objects must be:
-   1. Stored in a location outside the code tree
-   2. Accessed using industry best practices and libraries that are unlikely to be deprecated or abandoned.
-   3. Deduplicated.
-   4. Encrypted whenever and wherever possible.
-   5. Stored in the same way independent of their size, type or other characteristics.
-   6. Screened for malicious content.
+1. **Description:** We need a better solution for handling files uploaded from Talawa clients. GraphQL is unsuitable for file access and, storing files in the code tree with only a `.gitignore` file as protection is risky. 
+2. **Expected Outcomes:** 
+   1. Objects must be:
+      1. Stored in a location outside the code tree
+      2. Accessed using industry best practices and libraries that are unlikely to be deprecated or abandoned.
+      3. Deduplicated.
+      4. Encrypted whenever and wherever possible.
+      5. Stored in the same way independent of their size, type or other characteristics.
+      6. Screened for malicious content.
+   2. Other
+      1. By default, storage must be accessible via the system's locally accessible filesystem as a configurable parameter(s).
+      2. The use of cloud storage services is discouraged at this time.
 3. **References:** There have been extensive discussions about this which should help in evaluating options.
    1. https://github.com/PalisadoesFoundation/talawa-api/pull/1168
    2. https://github.com/PalisadoesFoundation/talawa-api/issues/952
@@ -157,6 +161,34 @@ Please read the `Research` section of this document for background information
 8. **Possible Mentors:** TBD
 9.  **Difficulty:** Medium
 10. **Impact Definition:** Core development, Risky/Exploratory
+
+### Self Hosted Chat and Notifications
+
+1. **Description:** The Talawa apps are closely coupled with cloud services which creates operational concerns. 
+    1. This greatly complicates setup as each new service requires new externally controlled configuration parameters. 
+    2. It also adds greater troubleshooting and billing complexity for organizations that will not be tech-savvy. 
+    3. Small organizations may also find it difficult to comply with new data residency laws when using international services. 
+    
+    For this idea there must be no dependency on any third party cloud service providers, all the code must run on the API server. 
+2. **Expected Outcomes:** 
+   1. _Chat_ : A key component of the Talawa application suite is chat. Though some endpoints have been created, the feature has not been fully activated and deployed. Chat must be:
+      1. Hosted on the API server. We expect the typical Talawa deployment to be small and hosted by communities with limited funding that may not be able to afford cloud additional services.
+      2. Available as 1 to 1 and 1 to many group chat options
+      3. Automatically available to registered attendees of events as a dedicated group chat instance.
+      4. Encrypted whenever and wherever possible
+      5. Capable of allowing users to reply to any historical comment.
+      6. Allow administrators to respond in various ways to complaints about chats.
+      7. Have the ability for older chats to be purged from the system
+      8. Assume that most communities using the chat system will be small. Research typical community sizes, seating and event attendance for various community based organizations in designing your solution. Consider easy to implement scalability if required.
+   2. _Notifications_
+      1. Identify an acceptable way to have notifications handled on the local server
+3. **Repos to update:** Talawa, Talawa-API, Talawa-Admin
+4. **Skills Required:** Code stacks related to repos above. See introduction section.
+5. **Depends on Project:** N/A
+6. **Project Size:** 350 hours (Large)
+7. **Possible Mentors:** TBD
+8.  **Difficulty:** Medium
+9.  **Impact Definition:** Core development, Risky/Exploratory
 
 ### Self Hosted Chat and Notifications
 
