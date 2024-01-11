@@ -162,26 +162,37 @@ Please read the `Research` section of this document for background information
 9.  **Difficulty:** Medium
 10. **Impact Definition:** Core development, Risky/Exploratory
 
-### Self Hosted Chat and Notifications
+### User Task Management
 
-1. **Description:** The Talawa apps are closely coupled with cloud services which creates operational concerns. 
-    1. This greatly complicates setup as each new service requires new externally controlled configuration parameters. 
-    2. It also adds greater troubleshooting and billing complexity for organizations that will not be tech-savvy. 
-    3. Small organizations may also find it difficult to comply with new data residency laws when using international services. 
-    
-    For this idea there must be no dependency on any third party cloud service providers, all the code must run on the API server. 
+1. **Description:** The oversight of an organization's volunteer activities is an important part of an administrator's role. These lightweight project management features will facilitate improved coordination within membership.
 2. **Expected Outcomes:** 
-   1. _Chat_ : A key component of the Talawa application suite is chat. Though some endpoints have been created, the feature has not been fully activated and deployed. Chat must be:
-      1. Hosted on the API server. We expect the typical Talawa deployment to be small and hosted by communities with limited funding that may not be able to afford cloud additional services.
-      2. Available as 1 to 1 and 1 to many group chat options
-      3. Automatically available to registered attendees of events as a dedicated group chat instance.
-      4. Encrypted whenever and wherever possible
-      5. Capable of allowing users to reply to any historical comment.
-      6. Allow administrators to respond in various ways to complaints about chats.
-      7. Have the ability for older chats to be purged from the system
-      8. Assume that most communities using the chat system will be small. Research typical community sizes, seating and event attendance for various community based organizations in designing your solution. Consider easy to implement scalability if required.
-   2. _Notifications_
-      1. Identify an acceptable way to have notifications handled on the local server
+   1. _Action Items_ : We need a way to manage the assignment of tasks to Users. These may or may not be related to events. API support for this feature has already been implemented via this [Talawa API issue](https://github.com/PalisadoesFoundation/talawa-api/issues/1595)
+
+        The challenge will be in creating an intuitive UI/UX to make this feature desirable. This would include screens for:
+       1. Sortable, editable tabular lists of action items assigned `to me` and `by me` showing the most important summary fields in the database schema.
+       2. CRUD activities for action items
+      
+      The management of Action Items related to events must be intuitive too, possibly with the creative use of filters.
+   2. _Event Agendas_ : Community based organizations will often need to have agendas for their events. Reasons for this requirement would include:
+       1. The order of ceremony for a wedding
+       2. Agendas for committee meetings
+
+       We need the ability to make events have agendas. This would include screens for: API support for this feature has already been implemented via this [Talawa API issue](https://github.com/PalisadoesFoundation/talawa-api/issues/1588). Desirable features include:
+
+       1. CRUD activities for event agendas 
+       4. When the first section is created, all existing agenda items must be tied to it while maintaining the agenda item order.
+       5. Changing the sequencing of an agenda section must not alter the sequencing of the agenda items within each section.
+       6. Changing the sequencing of agenda items must not alter:
+           1. The sequencing of sections
+           2. The sequencing of any other sections should other sections exist
+     
+       The challenge will be in creating an intuitive UI/UX to make this feature desirable with drag and drop capabilities where applicable. 
+
+   3. _Other_ : 
+      1. You will need to write valid tests for this work
+      2. You may want to add features to one or more repositories to facilitate your idea.
+      3. No other functionality must be affected
+
 3. **Repos to update:** Talawa, Talawa-API, Talawa-Admin
 4. **Skills Required:** Code stacks related to repos above. See introduction section.
 5. **Depends on Project:** N/A
