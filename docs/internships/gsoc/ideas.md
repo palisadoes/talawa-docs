@@ -187,11 +187,10 @@ Please read the `Research` section of this document for background information
            2. The sequencing of any other sections should other sections exist
      
        The challenge will be in creating an intuitive UI/UX to make this feature desirable with drag and drop capabilities where applicable. 
-
-   3. _Other_ : 
+   
+   4. _Other_ : 
       1. You will need to write valid tests for this work
       2. You may want to add features to one or more repositories to facilitate your idea.
-      3. No other functionality must be affected
 
 3. **Repos to update:** Talawa, Talawa-API, Talawa-Admin
 4. **Skills Required:** Code stacks related to repos above. See introduction section.
