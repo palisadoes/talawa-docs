@@ -237,14 +237,15 @@ Please read the `Research` section of this document for background information
 
 1. **Description:** AI creates many possible opportunities for the Talawa administrator. Solutions must be easy to implement and cost-effective for potential use by organizations that have limited resources. 
 2. **Expected Outcomes:** Consider ways to:
-   1. Help improve event attendance
-   2. Suggest volunteers for events
-   3. Create announcements that get better response rates
-   4. Flag spam
-   5. Otherwise improve the management of the application suite
+   1. Offensive post-detection and Community Guidelines Compliance Checker
+      - Use AI to analyze a post, to check if it is adhering to the community guidelines. Besides, it should also be able to detect offensive posts. 
+   2. Date & Time Picker
+      - Recommend suitable date and time slots for events, ensuring maximum participation by leveraging AI to analyze the calendar, holidays, participants' availability, and preferences.
+   3. Bot detection / Identify fake user
+      - Employ AI-driven algorithms for behavioral analysis, anomaly detection, and pattern recognition to swiftly identify and neutralize fake users or bots on your platform, enhancing security and user trust.
 3. **Reference:** An Admin must not rely exclusively on AI for the features you suggest as they may not choose to activate AI.
 4. **Repos to update:** Talawa, Talawa-API, Talawa-Admin
-5. **Skills Required:** Code stacks related to repos above. See introduction section.
+5. **Skills Required:** NLP, Machine Learning, & basic understanding of Code stacks related to repos above. See introduction section.
 6. **Depends on Project:** N/A
 7. **Project Size:** 350
 8. **Possible Mentors:** TBD
